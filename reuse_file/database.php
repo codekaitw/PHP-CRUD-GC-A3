@@ -266,6 +266,7 @@ class database
 	public function displayRecordByButtonClicked($tableName, $limit, $start){
 		$conditions = array('start'=>$start, 'limit'=>$limit);
 		$tem_db = $this->displayData($tableName, $conditions);
+		// these html code below can use require file to reuse it.
 		echo '<div class="collapse" id="profile-pages'. $start .'">';
 		echo '<div class="card p-3 py-4">
 					<div class="text-center">
