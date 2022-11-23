@@ -21,7 +21,7 @@ if(!isset($_SESSION['view_db_data'])){
 
 // try search >>> get id
 if(isset($_GET['viewID'])){
-	if(preg_match("/^\d$/", $_GET['viewID'])) {
+	if(preg_match("/^\d*$/", $_GET['viewID'])) {
 		$conditions = array(
 			'where' => array('id' => $_GET['viewID'])
 		);
@@ -64,7 +64,7 @@ if(isset($view_profile_datas) && $view_profile_datas){
 					<div class="col-md-7">
 						<div class="card p-3 py-4">
 							<div class="text-center">
-								<img src="<?php $value['profile_img_path']; ?>" width="100" class="rounded-circle" alt="<?php $value['profile_img_name']; ?>">
+								<img src="<?php echo $value['profile_img_path']; ?>" width="100" class="rounded-circle" alt="<?php echo $value['profile_img_name']; ?>">
 							</div>
 							<div class="text-center mt-3">
 						<span class="bg-secondary p-1 px-4 rounded text-white">
